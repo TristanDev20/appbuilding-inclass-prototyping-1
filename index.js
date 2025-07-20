@@ -14,9 +14,15 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const corsOptions = {
-	origin: ['http://localhost:3000', 'http://localhost:4000'],
+	origin: [
+		'http://localhost:3000', 
+		'http://localhost:4000',
+		'https://appbuilding-inclass-prototyping-2.vercel.app' 
+	],
 	credentials: true,
-	optionsSuccessStatus: 200
+	optionsSuccessStatus: 200,
+	methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+	allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
